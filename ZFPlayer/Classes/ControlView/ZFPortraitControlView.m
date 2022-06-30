@@ -127,7 +127,7 @@
     
     min_w = 62;
     min_h = 28;
-    min_x = self.fullScreenBtn.zf_left - min_w - 4;
+    min_x = self.bottomToolView.zf_width - min_w - min_margin;
     min_y = 0;
     self.totalTimeLabel.frame = CGRectMake(min_x, min_y, min_w, min_h);
     self.totalTimeLabel.zf_centerY = self.currentTimeLabel.zf_centerY;
@@ -380,6 +380,7 @@
     if (!_fullScreenBtn) {
         _fullScreenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_fullScreenBtn setImage:ZFPlayer_Image(@"ZFPlayer_fullscreen") forState:UIControlStateNormal];
+        _fullScreenBtn.hidden = YES;
     }
     return _fullScreenBtn;
 }
