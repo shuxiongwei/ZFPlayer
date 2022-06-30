@@ -318,9 +318,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
         // 如果执行了play还是没有播放则说明还没有缓存好，则再次缓存一段时间
         self.isBuffering = NO;
 //        if (!self.playerItem.isPlaybackLikelyToKeepUp) [self bufferingSomeSecond];
-        if (self.playerItem.playbackBufferEmpty) {
-            [self bufferingSomeSecond];
-        }
+        if (self.playerItem.playbackBufferEmpty) [self bufferingSomeSecond];
     });
 }
 
